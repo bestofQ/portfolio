@@ -121,3 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 媒体url
+MEDIA_URL = '/media/'
+# 文件路径
+# MEDIA_ROOT = 'media'
+# 路径合成 媒体的根目录 下面可有有很多子目录 images,music等等
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

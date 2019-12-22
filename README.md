@@ -7,3 +7,22 @@
 usrname:q
 password:tjq123456
 4、model中的信息传递到html
+
+2019/12/22
+1、models中的文件改变需要及时更新到数据库中，不然会出错
+2、imagefield中的upload_to 需要的是绝对路径，相对的会出错
+3、需要添加一个媒体的url和媒体的根目录media 在setting中
+# 媒体url
+MEDIA_URL = '/media/'
+# 文件路径
+# MEDIA_ROOT = 'media'
+# 路径合成 媒体的根目录 下面可有有很多子目录 images,music等等
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+4、需要显示所上传的图片需要在主url中添加：
+from django.conf.urls.static import static
+from django.conf import settings
+&&&&&&&&&&&&
+urlpatterns = [
+    path('xx/',xx.xx),
+    path('xx/',xx.xx),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)	# static(url, path)
