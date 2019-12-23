@@ -26,3 +26,11 @@ urlpatterns = [
     path('xx/',xx.xx),
     path('xx/',xx.xx),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)	# static(url, path)
+
+2019/12/23
+1、创建一个新的blog app
+python manage.py startapp blog
+2、在主settings中配置你的app 'blog'
+3、在models.py中创建你的模板
+4、在admin.py中注册你的model
+5、然后进行数据转移
