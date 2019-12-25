@@ -11,4 +11,8 @@ class Blog(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	# 处理文字过长，简单来说就是简介的一种，
+	def short_text(self):
+		return self.text[:60] + '...'
     
