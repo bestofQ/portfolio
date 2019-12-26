@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'app.apptemplates.load_settings',
             ],
         },
     },
@@ -121,7 +122,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# 整体的静态文件
+# python manage.py  collectstatic收集静态文件
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static/'),
+]
+
 STATIC_URL = '/static/'
+# 添加静态文件的根目录
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 媒体url
 MEDIA_URL = '/media/'
